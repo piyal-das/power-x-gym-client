@@ -10,7 +10,7 @@ const Classes = () => {
         <div>
             <Header></Header>
             <Banner></Banner>
-            <h1>this is Classes</h1>
+            
             <Class></Class>
             <Footer></Footer>
         </div>
