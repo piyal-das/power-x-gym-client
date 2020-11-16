@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './PersonalDetails.scss';
 import { useForm } from "react-hook-form";
 
-const PersonalDetails = () => {
+const PersonalDetails = (props) => {
+    const {register, handleSubmit, watch, errors} = useForm();
+    const [countries, setCountries] = useState([]);
+    const onSubmit = data => {
+        props.stepHandler(data);
+    };
+
+
     return (
         <div className="container">
              <form onSubmit={handleSubmit(onSubmit)}>

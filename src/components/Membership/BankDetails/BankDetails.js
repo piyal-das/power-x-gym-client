@@ -1,36 +1,36 @@
 import './BankDetails.scss';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import {loadStripe} from '@stripe/stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import visa from '../../../Images/credit-cards_visa.png';
 import master from '../../../Images/credit-cards_mastercard.png';
 import amex from '../../../Images/credit-cards_amex.png';
 import {
-  CardElement,
-  Elements,
-  useStripe,
-  useElements,
+    CardElement,
+    Elements,
+    useStripe,
+    useElements,
 } from '@stripe/react-stripe-js';
 
 const BankDetails = (props) => {
     const [error, setError] = useState(false);
     const stripe = useStripe();
     const elements = useElements();
-  
-    const handleSubmit = async (event) => {
-      event.preventDefault();
-      const {err, paymentMethod} = await stripe.createPaymentMethod({
-        type: 'card',
-        card: elements.getElement(CardElement),
-      });
 
-      if(err){
-        setError(true)
-      }else{
-        const paymentID = paymentMethod.id;
-        props.stepHandler({paymentID})
-        setError(false)
-      }
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const { err, paymentMethod } = await stripe.createPaymentMethod({
+            type: 'card',
+            card: elements.getElement(CardElement),
+        });
+
+        if (err) {
+            setError(true)
+        } else {
+            const paymentID = paymentMethod.id;
+            props.stepHandler({ paymentID })
+            setError(false)
+        }
     };
 
     return (
