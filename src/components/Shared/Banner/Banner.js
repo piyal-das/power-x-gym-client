@@ -15,7 +15,7 @@ const Banner = () => {
     }
 
     return (
-        <div className="banner">
+        <section className="banner">
             <div className="container">
                 <div className="row">
                     <div className="col-md-5">
@@ -31,7 +31,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
