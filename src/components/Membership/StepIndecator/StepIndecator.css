@@ -1,0 +1,36 @@
+.steps::after{
+    content: "";
+    display: block;
+    height: 5px;
+    width: 67%;
+    border-top: 3px dashed  #afafaf;
+    margin: 0 auto;
+    transform: translateY(-60px);
+}
+.step{
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+.step .num{
+    background: #afafaf;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    padding-top: 10px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+
+}
+.step.active .num{
+    background:#fcd842;
+}
+
+.form-control{
+    border-radius: 0;
+}
