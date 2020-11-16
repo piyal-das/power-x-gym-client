@@ -1,12 +1,9 @@
 import React from 'react';
 import Program from '../Program/Program';
 import './Programs.scss';
+import {connect} from 'react-redux';
 
-const Programs = () => {
-    const programs = [
-        { name: 'yoga training session', image: 'https://i.imgur.com/glzHzi6.png' },
-        { name: 'cardio training session', image: 'https://i.imgur.com/b7EKjNU.jpg' },
-    ];
+const Programs = ({ programs }) => {
     return (
         <div className="programs">
             <div className="container">
@@ -21,4 +18,10 @@ const Programs = () => {
     );
 };
 
-export default Programs;
+const mapStateToProps = (state) => {
+    return {
+        programs: state.home.programs,
+    }
+}
+
+export default connect(mapStateToProps)(Programs);

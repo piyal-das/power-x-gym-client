@@ -7,6 +7,7 @@ import Header from '../../Shared/Header/Header';
 import Description from '../Description/Description';
 import Schedule from '../Schedule/Schedule';
 import './AdvanceGym.scss';
+import { connect } from 'react-redux';
 
 const AdvanceGym = () => {
     const {gymDetails, setGymDetails} = useContext(GymContext);

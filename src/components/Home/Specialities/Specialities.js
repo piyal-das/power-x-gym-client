@@ -1,14 +1,9 @@
 import React from 'react';
 import Speciality from '../Speciality/Speciality';
 import './Specialities.scss';
+import { connect } from 'react-redux';
 
-const Specialities = () => {
-    const specialities = [
-        {name: 'free fitness training', icon: 'https://i.imgur.com/TLldmDg.png',},
-        {name: 'tons of cardio and strength', icon: 'https://i.imgur.com/Ev2EhsF.png',},
-        {name: 'no commitment memberships', icon: 'https://i.imgur.com/ldjFmd1.png',},
-    ];
-
+const Specialities = ({ specialities }) => {
     return (
         <div className="specialities">
             <div className="container">
@@ -23,4 +18,10 @@ const Specialities = () => {
     );
 };
 
-export default Specialities;
+const mapStateToProps = (state) => {
+    return {
+        specialities: state.home.specialities,
+    }
+}
+
+export default connect(mapStateToProps)(Specialities);

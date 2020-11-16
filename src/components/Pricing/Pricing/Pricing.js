@@ -9,7 +9,7 @@ const Pricing = () => {
     const [pricingList, setPricingList] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/pricings')
+        fetch('https://infinite-ridge-77813.herokuapp.com/pricings')
             .then(res => res.json())
             .then(data => setPricingList(data));
     }, []);

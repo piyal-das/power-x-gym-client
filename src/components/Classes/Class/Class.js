@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
 import { GymContext } from '../../../App';
+import { addClassDetail } from '../../../redux/actions/gymDetailActions';
+import { connect } from 'react-redux';
 
 const Class = ({ gymClass }) => {
     const { name, image } = gymClass;
