@@ -6,15 +6,14 @@ import Header from '../../Shared/Header/Header';
 import Banner from '../../Shared/Banner/Banner';
 import Footer from '../../Shared/Footer/Footer';
 import Specialities from '../Specialities/Specialities';
-import Feature from '../Feature/Feature';
+import Features from '../Features/Features';
 
 const Home = () => {
     return (
         <div>
-            <h1>this is Home</h1>
             <Header></Header>
             <Banner></Banner>
-            <Feature></Feature>
+            <Features></Features>
             <About></About>
             <Programs></Programs>
             <Specialities></Specialities>
