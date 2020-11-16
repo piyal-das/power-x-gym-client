@@ -1,0 +1,11 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.pricing-title {
+    font-family: $pri-font;
+    font-size: 50px !important;
+    text-transform: uppercase;
+    .special {
+        color: $pri-color;
+    }
+}

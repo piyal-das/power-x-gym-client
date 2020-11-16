@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { GymContext } from '../../../App';
 import Banner from '../../Shared/Banner/Banner';
 import Footer from '../../Shared/Footer/Footer';
@@ -10,6 +11,11 @@ import './AdvanceGym.scss';
 const AdvanceGym = () => {
     const {gymDetails, setGymDetails} = useContext(GymContext);
     const {image, schedule, benefits} = gymDetails;
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/pricing');
+    }
 
     return (
         <div>
@@ -24,7 +30,7 @@ const AdvanceGym = () => {
                         <Schedule schedule={schedule}></Schedule>
                     </div>
                 </div>
-                <button className="main-btn schedule-btn">Join us</button>
+                <button onClick={handleClick} className="main-btn schedule-btn">Join us</button>
             </div>
             <Footer></Footer>
         </div>
