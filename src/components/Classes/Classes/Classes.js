@@ -19,7 +19,7 @@ const Classes = () => {
         <div>
             <Header></Header>
             <Banner></Banner>
-            <Container className="px-0">
+            <Container className="px-0 classes">
                 <div className="row">
                     {
                         classes.map(item => <Class key={item._id} gymClass={item}></Class>)

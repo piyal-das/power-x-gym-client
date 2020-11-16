@@ -1,0 +1,29 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.program {
+    position: relative;
+
+    img{
+        height: 450px;
+    }
+
+    .image-title{
+        position: absolute;
+        text-align: center;
+        padding: 7px 60px;
+        font-size: 40px;
+        border: none;
+        bottom: 30px;
+        left: 0;
+        background-color: $pri-color;
+        font-family: $pri-font;
+    }
+
+    .program-icon{
+        position: absolute;
+        right: 20px;
+        top: 30%;
+        font-size: 20px !important;
+    }
+}
