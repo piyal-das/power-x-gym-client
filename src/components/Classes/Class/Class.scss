@@ -1,0 +1,32 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.gymClass-img {
+    height: 400px !important;
+}
+
+.gymClass {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.gymClass-title {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 300px !important;
+    height: 80px;
+    transform: translateX(-50%);
+    background-color: $pri-color;
+    font-family: $pri-font !important;
+    text-align: center;
+    color: $sec-color;
+    font-size: 28px !important;
+    border: none !important;
+    .gymClass-icon {
+        font-size: 20px;
+        position: absolute;
+        right: 10px;
+        top: 35%;
+    }
+}

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GymContext } from '../../../App';
 import Banner from '../../Shared/Banner/Banner';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
@@ -7,13 +8,23 @@ import Schedule from '../Schedule/Schedule';
 import './AdvanceGym.scss';
 
 const AdvanceGym = () => {
+    const {gymDetails, setGymDetails} = useContext(GymContext);
+    const {image, schedule, benefits} = gymDetails;
+
     return (
         <div>
             <Header></Header>
             <Banner></Banner>
-            <h1>this is AdvanceGym</h1>
-            <Description></Description>
-            <Schedule></Schedule>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-7">
+                        <Description image={image} benefits={benefits}></Description>
+                    </div>
+                    <div className="col-md-5">
+                        <Schedule schedule={schedule}></Schedule>
+                    </div>
+                </div>
+            </div>
             <Footer></Footer>
         </div>
     );
