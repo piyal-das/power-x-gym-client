@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Home></Home>
       <Classes></Classes>
-      {/* <AdvanceGym></AdvanceGym> */}
+      <AdvanceGym></AdvanceGym>
       <Pricing></Pricing>
       <Membership></Membership>
     </div>
