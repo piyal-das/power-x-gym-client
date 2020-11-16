@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { GymContext } from '../../../App';
 import Banner from '../../Shared/Banner/Banner';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
@@ -9,8 +8,7 @@ import Schedule from '../Schedule/Schedule';
 import './AdvanceGym.scss';
 import { connect } from 'react-redux';
 
-const AdvanceGym = () => {
-    const {gymDetails, setGymDetails} = useContext(GymContext);
+const AdvanceGym = ({ gymDetails }) => {
     const {image, schedule, benefits} = gymDetails;
     const history = useHistory();
 
@@ -38,4 +36,10 @@ const AdvanceGym = () => {
     );
 };
 
-export default AdvanceGym;
+const mapStateToProps = (state) => {
+    return {
+        gymDetails: state.gymDetail.gymDetails
+    }
+}
+
+export default connect(mapStateToProps)(AdvanceGym);

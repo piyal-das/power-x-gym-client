@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { fetchPricingPlan } from '../../../redux/actions/pricingPlanActions';
 import Banner from '../../Shared/Banner/Banner';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import PricingCard from '../PricingCard/PricingCard';
 import './Pricing.scss';
+import {connect} from 'react-redux';
 
-const Pricing = () => {
-    const [pricingList, setPricingList] = useState([]);
-
+const Pricing = ({ pricingList, fetchPricingPlan }) => {
     useEffect(() => {
-        fetch('https://infinite-ridge-77813.herokuapp.com/pricings')
-            .then(res => res.json())
-            .then(data => setPricingList(data));
+        fetchPricingPlan();
     }, []);
 
     return (
@@ -40,4 +38,16 @@ const Pricing = () => {
     );
 };
 
-export default Pricing;
+const mapStateToProps = (state) => {
+    return {
+        pricingList: state.pricing.pricingPlan,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        fetchPricingPlan: () => dispatch(fetchPricingPlan()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Pricing);

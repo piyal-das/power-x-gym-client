@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Class from '../Class/Class';
 import './Classes.scss';
 import Banner from '../../Shared/Banner/Banner';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Container from 'react-bootstrap/Container';
+import { fetchGymClasses } from '../../../redux/actions/gymClassesActions';
+import { connect } from 'react-redux';
 
-const Classes = () => {
-    const [classes, setClasses] = useState([]);
-
+const Classes = ({ gymClasses, fetchGymClasses }) => {
     useEffect(() => {
-        fetch('https://infinite-ridge-77813.herokuapp.com/classes')
-        .then(res => res.json())
-        .then(data => setClasses(data));
+        fetchGymClasses();
     }, []);
 
     return (
@@ -22,7 +20,7 @@ const Classes = () => {
             <Container className="px-0 classes">
                 <div className="row">
                     {
-                        classes.map(item => <Class key={item._id} gymClass={item}></Class>)
+                        gymClasses.map(item => <Class key={item._id} gymClass={item}></Class>)
                     }
                 </div>
             </Container>
@@ -31,4 +29,16 @@ const Classes = () => {
     );
 };
 
-export default Classes;
+const mapStateToProps = (state) => {
+    return {
+        gymClasses: state.classes.gymClasses,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        fetchGymClasses: () => dispatch(fetchGymClasses()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Classes);

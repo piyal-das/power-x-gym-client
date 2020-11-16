@@ -7,7 +7,7 @@ const initialState = {
 const gymDetailReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_CLASS_DETAIL:
-            return { ...state, gymDetails: action.info};
+            return { ...state, gymDetails: action.info };
         default: 
             return state;
     }

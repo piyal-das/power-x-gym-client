@@ -1,19 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './Class.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
-import { GymContext } from '../../../App';
 import { addClassDetail } from '../../../redux/actions/gymDetailActions';
 import { connect } from 'react-redux';
 
-const Class = ({ gymClass }) => {
+const Class = ({ gymClass, addClassDetail }) => {
     const { name, image } = gymClass;
-    const { setGymDetails } = useContext(GymContext);
     const history = useHistory();
 
     const handleClick = () => {
-        setGymDetails(gymClass);
+        addClassDetail(gymClass);
         history.push('/advanceGym');
     }
 
@@ -30,4 +28,8 @@ const Class = ({ gymClass }) => {
     );
 };
 
-export default Class;
+const mapDispatchToProps = {
+    addClassDetail: addClassDetail,
+}
+
+export default connect(null, mapDispatchToProps)(Class);
