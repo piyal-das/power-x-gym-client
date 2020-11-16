@@ -2,19 +2,20 @@ import React from 'react';
 import Banner from '../../Shared/Banner/Banner';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
-import BankDetails from '../BankDetails/BankDetails';
+import Payment from '../BankDetails/Payment';
 import MembershipMessage from '../MembershipMessage/MembershipMessage';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
+import StepIndecator from '../StepIndecator/StepIndecator';
 import './Membership.scss';
 
 const Membership = () => {
     return (
         <div>
-            <h1>this is membership</h1>
             <Header></Header>
             <Banner></Banner>
+            <StepIndecator></StepIndecator>
             <PersonalDetails></PersonalDetails>
-            <BankDetails></BankDetails>
+            <Payment></Payment>
             <MembershipMessage></MembershipMessage>
             <Footer></Footer>
         </div>

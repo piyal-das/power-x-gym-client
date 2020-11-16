@@ -1,7 +1,5 @@
 import './BankDetails.scss';
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import { loadStripe } from '@stripe/stripe-js';
 import visa from '../../../Images/credit-cards_visa.png';
 import master from '../../../Images/credit-cards_mastercard.png';
 import amex from '../../../Images/credit-cards_amex.png';
@@ -55,6 +53,27 @@ const BankDetails = (props) => {
                     <img className="px-2" src={master} alt="" />
                     <img src={amex} alt="" />
                 </div>
+                <form onSubmit={handleSubmit}>
+                    <CardElement
+                        options={{
+                            style: {
+                                base: {
+                                    fontSize: '16px',
+                                    color: '#424770',
+                                    '::placeholder': {
+                                        color: '#aab7c4',
+                                    },
+                                },
+                                invalid: {
+                                    color: '#9e2146',
+                                },
+                            },
+                        }}
+                    />
+                    <button type="submit" disabled={!stripe}>
+                        Pay
+                    </button>
+                </form>
             </div>
 
             <div className="my-5">
@@ -63,9 +82,8 @@ const BankDetails = (props) => {
             <div className="text-right">
                 <button type="submit" className="btn btn-primary" disabled={!stripe}>
                     Next
-          </button>
+                </button>
             </div>
-
         </form>
     );
 };
