@@ -4,15 +4,16 @@
 
 .navbar {
     width: 100%;
-    position: fixed;
+    position: absolute !important;
     top: 10px;
     left: 0;
+    z-index: 999;
     
     .logo{
         font-family: $sec-font !important;
         font-weight: 700 !important;
         cursor: pointer;
-        color: $sec-color !important;
+        color: white !important;
         .special {
             color: $pri-color;
         }
@@ -22,8 +23,9 @@
     }
 
     .nav-link {
-        margin: 0 10px;
-        font-family: $sec-font;
-        font-weight: 500;
+        margin: 0 10px !important;
+        font-family: $sec-font !important;
+        font-weight: 400 !important;
+        color: white !important;
     }
 }

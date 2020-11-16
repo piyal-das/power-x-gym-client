@@ -7,7 +7,7 @@ import './Header.scss';
 const Header = () => {
 
     return (
-        <Navbar bg="none" variant="light">
+        <Navbar className="navbar" bg="none" variant="light">
             <div className="container">
                 <Navbar.Brand><Link to="/" className="logo">POWER <span className="special">X</span></Link></Navbar.Brand>
                 <Nav className="ml-auto">
