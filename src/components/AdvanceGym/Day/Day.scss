@@ -1,0 +1,11 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.item-container{
+    padding: 20px 20px 10px !important;
+    box-shadow: 2px 2px 10px rgb(230, 230, 230);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-family: $sec-font;
+}

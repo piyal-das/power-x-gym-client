@@ -1,14 +1,27 @@
 import React from 'react';
 import Speciality from '../Speciality/Speciality';
 import './Specialities.scss';
+import { connect } from 'react-redux';
 
-const Specialities = () => {
+const Specialities = ({ specialities }) => {
     return (
-        <div>
-            <h1>this is Specialities</h1>
-            <Speciality></Speciality>
+        <div className="specialities">
+            <div className="container">
+                <h1 className="heading mb-5"><span className="special">Why</span> choose us</h1>
+                <div className="row">
+                    { 
+                        specialities.map(item => <Speciality key={item.name} item={item}></Speciality>)
+                    }
+                </div>
+            </div>
         </div>
     );
 };
 
-export default Specialities;
+const mapStateToProps = (state) => {
+    return {
+        specialities: state.home.specialities,
+    }
+}
+
+export default connect(mapStateToProps)(Specialities);

@@ -1,14 +1,26 @@
 import React from 'react';
 import Feature from '../Feature/Feature';
 import './Features.scss';
+import { connect } from 'react-redux';
 
-const Features = () => {
+const Features = ({ featureList }) => {
     return (
-        <div>
-            <h1>this is Features</h1>
-            <Feature></Feature>
+        <div className="features">
+            <div className="container">
+                <div className="row">
+                    {
+                        featureList.map(item => <Feature key={item.name} item={item}></Feature>)
+                    }
+                </div>
+            </div>
         </div>
     );
 };
 
-export default Features;
+const mapStateToProps = (state) => {
+    return {
+        featureList: state.home.featureList,
+    }
+}
+
+export default connect(mapStateToProps)(Features);

@@ -1,0 +1,24 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.about {
+    margin-bottom: 100px;
+    
+    .about-heading {
+        font-size: 60px;
+        color: lightgrey;
+    }
+    h1 {
+        font-family: $pri-font;
+        font-size: 50px;
+        margin-bottom: -10px !important;
+    }
+    .special {
+        color: $pri-color !important;
+    }
+    p{
+        margin-top: 20px;
+        margin-right: 40px;
+        font-family: $sec-font;
+    }
+}

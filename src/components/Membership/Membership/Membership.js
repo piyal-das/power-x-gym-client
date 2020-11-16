@@ -10,7 +10,6 @@ import './Membership.scss';
 const Membership = () => {
     return (
         <div>
-            <h1>this is membership</h1>
             <Header></Header>
             <Banner></Banner>
             <PersonalDetails></PersonalDetails>

@@ -1,10 +1,13 @@
 import React from 'react';
 import './Day.scss';
 
-const Day = () => {
+const Day = ({ item }) => {
+    const {day, time} = item;
+
     return (
-        <div>
-            <h1>this is day</h1>
+        <div className="col-md-6 item-container">
+            <h4>{day}</h4>
+            <p className="special">{time}</p>
         </div>
     );
 };
