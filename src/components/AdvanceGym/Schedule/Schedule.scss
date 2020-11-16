@@ -1,0 +1,23 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.schedule {
+    position: relative;
+    .schedule-title {
+        font-family: $pri-font;
+        font-size: 50px !important;
+    }
+    .special{
+        color: $pri-color;
+    }
+}
+
+.main-btn{
+    font-family: $pri-font;
+    width: 120px;
+    background-color: $pri-color;
+    color: $sec-color;
+    border: none;
+    height: 50px;
+    font-size: 25px; 
+}

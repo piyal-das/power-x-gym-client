@@ -15,7 +15,7 @@ const AdvanceGym = () => {
         <div>
             <Header></Header>
             <Banner></Banner>
-            <div className="container">
+            <div className="container advanceGym">
                 <div className="row">
                     <div className="col-md-7">
                         <Description image={image} benefits={benefits}></Description>
@@ -24,6 +24,7 @@ const AdvanceGym = () => {
                         <Schedule schedule={schedule}></Schedule>
                     </div>
                 </div>
+                <button className="main-btn schedule-btn">Join us</button>
             </div>
             <Footer></Footer>
         </div>
