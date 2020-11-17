@@ -26,7 +26,7 @@ const Pricing = ({ pricingList, fetchPricingPlan }) => {
                         pricingList.map(item => {
                             return (
                                 <div className="col-sm-12 col-md-4">
-                                    <PricingCard key={item.name} item={item}></PricingCard>
+                                    <PricingCard key={item._id} item={item}></PricingCard>
                                 </div>
                             );
                         })

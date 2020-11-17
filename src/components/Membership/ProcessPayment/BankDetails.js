@@ -60,15 +60,15 @@ const BankDetails = ({ handlePayment }) => {
                     </div>
                     <div className="form-row">
                         <div className="form-group col-md-8">
-                            <label for="inputAddressLine1">NAME ON CARD </label>
+                            <label htmlFor="inputAddressLine1">NAME ON CARD </label>
                             <input type="address" className="form-control" id="inputAddressLine1" placeholder="Address" required />
                         </div>
                         <div className="form-group col-md-2">
-                            <label for="cardExpDate">Expiry Date</label>
+                            <label htmlFor="cardExpDate">Expiry Date</label>
                             <CardExpiryElement id="cardExpDate" className="form-control" />
                         </div>
                         <div className="form-group col-md-2">
-                            <label for="cardCvc">CVC CODE </label>
+                            <label htmlFor="cardCvc">CVC CODE </label>
                             <CardCvcElement id="cardCvc" className="form-control" />
                         </div>
                     </div>
