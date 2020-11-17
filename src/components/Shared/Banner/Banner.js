@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import { useHistory, useParams, useRouteMatch } from 'react-router-dom';
 import './Banner.scss';
 import ModalVideo from 'react-modal-video';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 const Banner = ({ gymDetails }) => {
     const history = useHistory();
     const { path } = useRouteMatch();
+    const {id} = useParams();
     const [isOpen, setOpen] = useState(false);
 
     const handleClick = () => {
@@ -23,7 +24,7 @@ const Banner = ({ gymDetails }) => {
                         path === '/classes' ? <h1 className="main-heading">Our Classes</h1>
                             : path === '/advanceGym' ? <h1 className="main-heading">{gymDetails.name}</h1>
                             : path === '/pricing' ? <h1 className="main-heading">Pricing Plan</h1>
-                            : path === '/membership' ? <h1 className="main-heading">Your Gym Membership</h1>
+                            : id === 'personalDetails' || id === 'bankDetails' || id === 'message' ? <h1 className="main-heading">Your Gym Membership</h1>
                             : path === '*' ? <h1 className="main-heading">404 Not Found</h1>
                             : <>
                                 <div className="col-sm-12 col-md-5">
