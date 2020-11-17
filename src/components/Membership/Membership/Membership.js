@@ -8,8 +8,10 @@ import MembershipMessage from '../MembershipMessage/MembershipMessage';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
 import StepIndicator from '../StepIndicator/StepIndicator';
 import './Membership.scss';
+import { addUserDetail } from '../../../redux/actions/membershipActions';
+import { connect } from 'react-redux';
 
-const Membership = () => {
+const Membership = ({addUserDetail}) => {
     const {id} = useParams();
 
     return (
@@ -18,7 +20,7 @@ const Membership = () => {
             <Banner></Banner>
             <StepIndicator></StepIndicator>
             {
-                id === 'personalDetails' ? <PersonalDetails></PersonalDetails>
+                id === 'personalDetails' ? <PersonalDetails addUserDetail={addUserDetail}></PersonalDetails>
                     : id === 'bankDetails' ? <ProcessPayment></ProcessPayment>
                     : id === 'message' ? <MembershipMessage></MembershipMessage>
                     : null
@@ -28,4 +30,8 @@ const Membership = () => {
     );
 };
 
-export default Membership;
+const mapDispatchToProps = {
+    addUserDetail: addUserDetail
+}
+
+export default connect(null, mapDispatchToProps)(Membership);
