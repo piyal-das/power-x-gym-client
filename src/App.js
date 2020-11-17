@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React from 'react';
 import './App.scss';
 import AdvanceGym from './components/AdvanceGym/AdvanceGym/AdvanceGym';
 import Classes from './components/Classes/Classes/Classes';
@@ -12,13 +12,8 @@ import {
   Route,
 } from "react-router-dom";
 
-export const GymContext = createContext();
-
 function App() {
-  const [gymDetails, setGymDetails] = useState([]);
-
   return (
-    <GymContext.Provider value = {{ gymDetails, setGymDetails }} className='app'>
       <Router className="App">
         <Switch>
           <Route exact path="/">
@@ -44,7 +39,6 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </GymContext.Provider>
   );
 }
 

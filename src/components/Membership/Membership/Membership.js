@@ -5,6 +5,7 @@ import Header from '../../Shared/Header/Header';
 import BankDetails from '../BankDetails/BankDetails';
 import MembershipMessage from '../MembershipMessage/MembershipMessage';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
+import StepIndicator from '../StepIndicator/StepIndicator';
 import './Membership.scss';
 
 const Membership = () => {
@@ -12,6 +13,7 @@ const Membership = () => {
         <div>
             <Header></Header>
             <Banner></Banner>
+            <StepIndicator></StepIndicator>
             <PersonalDetails></PersonalDetails>
             <BankDetails></BankDetails>
             <MembershipMessage></MembershipMessage>

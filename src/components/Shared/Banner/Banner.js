@@ -1,15 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import './Banner.scss';
-import {GymContext} from '../../../App';
 import ModalVideo from 'react-modal-video';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
 
-const Banner = () => {
+const Banner = ({ gymDetails }) => {
     const history = useHistory();
     const { path } = useRouteMatch();
-    const { gymDetails, setGymDetails } = useContext(GymContext);
     const [isOpen, setOpen] = useState(false);
 
     const handleClick = () => {
@@ -46,4 +45,10 @@ const Banner = () => {
     );
 };
 
-export default Banner;
+const mapStateToProps = (state) => {
+    return {
+        gymDetails: state.gymDetail.gymDetails
+    }
+}
+
+export default connect(mapStateToProps)(Banner);

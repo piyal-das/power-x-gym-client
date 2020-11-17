@@ -1,0 +1,36 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.stepIndicator{
+    width: 600px;
+    margin: 0 auto 30px;
+    position: relative;
+
+    .stepIndicator-container{
+        .circle{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(209, 209, 209);
+
+            p{
+                line-height: 50px;
+                text-align: center;
+                font-family: $sec-font;
+                font-weight: 600;
+                color: white;
+            }
+        }
+    }
+    
+    .line {
+        width: 600px;
+        height: 5px;
+        border-top: 4px dotted rgb(209, 209, 209);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+}
