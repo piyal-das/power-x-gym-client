@@ -17,7 +17,7 @@ const Banner = ({ gymDetails }) => {
 
     return (
         <section className="banner">
-            <div className="container">
+            <div className="container px-0">
                 <div className="row">
                     {
                         path === '/classes' ? <h1 className="main-heading">Our Classes</h1>

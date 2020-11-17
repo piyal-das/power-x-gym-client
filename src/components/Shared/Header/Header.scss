@@ -14,11 +14,12 @@
         font-weight: 700 !important;
         cursor: pointer;
         color: white !important;
+        font-size: 30px;
         .special {
             color: $pri-color;
         }
         &:hover {
-            color: $sec-color !important;
+            color: white !important;
         }
     }
 

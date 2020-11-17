@@ -4,23 +4,22 @@ import './MembershipMessage.scss';
 
 const MembershipMessage = ({ userDetail, bankDetail, gymDetail, pricingPlan }) => {
     const info = { userDetail, bankDetail, gymDetail, pricingPlan };
-    console.log(info);
     const [isInfoAdded, setIsInfoAdded] = useState(false);
 
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/addMember', { 
-    //         method: 'POST',
-    //         headers: {'Content-Type': 'application/json'},
-    //         body: JSON.stringify(info)
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data);
-    //         if(data > 0){
-    //             setIsInfoAdded(true);
-    //         } 
-    //     })
-    // }, [])
+    useEffect(() => {
+        fetch('https://infinite-ridge-77813.herokuapp.com/addMember', { 
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(info)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data){
+                setIsInfoAdded(data);
+            } 
+        })
+    }, [])
 
     return (
         <div className="text-center">
