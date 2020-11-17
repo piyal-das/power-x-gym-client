@@ -6,7 +6,7 @@ import { addUserDetail } from '../../../redux/actions/membershipActions';
 import { connect } from 'react-redux';
 import { fetchCountries } from '../../../redux/actions/fetchCountriesActions';
 
-const PersonalDetails = ({ userDetail, countries, addUserDetail, fetchCountries }) => {
+const PersonalDetails = ({ countries, addUserDetail, fetchCountries }) => {
     const {register, handleSubmit, watch, errors} = useForm();
     const history = useHistory();
 
@@ -16,8 +16,7 @@ const PersonalDetails = ({ userDetail, countries, addUserDetail, fetchCountries 
 
     const onSubmit = data => {
         addUserDetail(data);
-        console.log(userDetail, data);
-        // history.push(`/membership/bankDetails`);
+        history.push(`/membership/bankDetails`);
     };
 
     return (
@@ -102,7 +101,6 @@ const PersonalDetails = ({ userDetail, countries, addUserDetail, fetchCountries 
 const mapStateToProps = (state) => {
     return {
         countries: state.countries.countries,
-        userDetail: state.membership.userDetail,
     }
 }
 

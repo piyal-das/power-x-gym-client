@@ -10,6 +10,7 @@ const stripePromise = loadStripe('pk_test_51HZNkQBEspuFA8V0SJHuv7yto9ESLRDjC4nh8
 const ProcessPayment = ({ addBankDetail }) => {
     const handlePayment = (data) => {
         addBankDetail(data);
+        
     }
 
     return (
@@ -20,7 +21,7 @@ const ProcessPayment = ({ addBankDetail }) => {
 };
 
 const mapDispatchToProps = {
-    addBankDetail: addBankDetail
+    addBankDetail: addBankDetail,
 }
 
 export default connect(null, mapDispatchToProps)(ProcessPayment);

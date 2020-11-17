@@ -1,6 +1,7 @@
 export const FETCH_PRICING_PLAN_LOADING = 'FETCH_PRICING_PLAN_LOADING';
 export const FETCH_PRICING_PLAN_SUCCESS = 'FETCH_PRICING_PLAN_SUCCESS';
 export const FETCH_PRICING_PLAN_ERROR = 'FETCH_PRICING_PLAN_ERROR';
+export const ADD_PRICING_PLAN = 'ADD_PRICING_PLAN';
 
 export const fetchPricingPlanLoading = () => {
     return {
@@ -19,6 +20,13 @@ export const fetchPricingPlanError = (error) => {
     return {
         type: FETCH_PRICING_PLAN_ERROR,
         error
+    }
+}
+
+export const addPricingPlan = (info) => {
+    return {
+        type: ADD_PRICING_PLAN,
+        info
     }
 }
 

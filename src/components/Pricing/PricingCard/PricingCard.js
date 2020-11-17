@@ -3,8 +3,10 @@ import './PricingCard.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
+import { addPricingPlan } from '../../../redux/actions/pricingPlanActions';
+import { connect } from 'react-redux';
 
-const PricingCard = ({ item }) => {
+const PricingCard = ({ item, addPricingPlan }) => {
     const { name, image, price, benefits } = item;
     const backgroundStyle = {
         backgroundImage: `url(${image})`,
@@ -16,6 +18,7 @@ const PricingCard = ({ item }) => {
     const history = useHistory();
 
     const handleClick = () => {
+        addPricingPlan(item);
         history.push('/membership/personalDetails');
     }
 
@@ -39,4 +42,8 @@ const PricingCard = ({ item }) => {
     );
 };
 
-export default PricingCard;
+const mapDispatchToProps = {
+    addPricingPlan: addPricingPlan
+}
+
+export default connect(null, mapDispatchToProps)(PricingCard);
