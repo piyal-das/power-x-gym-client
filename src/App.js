@@ -31,7 +31,7 @@ function App() {
           <Route path="/pricing">
             <Pricing></Pricing>
           </Route>
-          <Route path="/membership">
+          <Route path="/membership/:id">
             <Membership></Membership>
           </Route>
           <Route path="*">

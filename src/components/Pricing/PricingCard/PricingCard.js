@@ -16,7 +16,7 @@ const PricingCard = ({ item }) => {
     const history = useHistory();
 
     const handleClick = () => {
-        history.push('/membership');
+        history.push('/membership/personalDetails');
     }
 
     return (
