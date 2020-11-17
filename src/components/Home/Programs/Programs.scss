@@ -1,0 +1,16 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.programs {
+    margin-bottom: 100px;
+}
+
+.heading {
+    font-size: 60px;
+    font-family: $pri-font;
+    text-align: center;
+}
+
+.special {
+    color: $pri-color !important;
+}

@@ -1,0 +1,26 @@
+@import '../../../styles/fonts';
+@import '../../../styles/colors';
+
+.speciality {
+    text-align: center;
+    padding: 40px 30px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgb(231, 231, 231);
+    transition: all linear 0.4s;
+
+    &:hover {
+        border: 1px solid $pri-color;
+        box-shadow: 2px 2px 10px rgb(219, 219, 219);
+    }
+
+    .icon{
+        height: 100px;
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        font-family: $pri-font;
+    }
+}

@@ -1,0 +1,12 @@
+@import '../../../styles/fonts';
+
+.description-container{    
+    .description {
+        font-family: $sec-font;
+    }
+    li {
+        list-style: none;
+        font-weight: 700;
+        font-family: $sec-font;
+    }
+}

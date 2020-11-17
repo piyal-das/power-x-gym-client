@@ -1,0 +1,48 @@
+@import '../../../styles/fonts';
+@import '../../../styles/colors';
+
+
+.navbar {
+    width: 100%;
+    position: absolute !important;
+    top: 10px;
+    left: 0;
+    z-index: 999;
+    
+    .logo{
+        font-family: $sec-font !important;
+        font-weight: 700 !important;
+        cursor: pointer;
+        color: white !important;
+        font-size: 30px;
+        .special {
+            color: $pri-color;
+        }
+        &:hover {
+            color: white !important;
+        }
+    }
+
+    .nav-link {
+        margin: 0 10px !important;
+        font-family: $sec-font !important;
+        font-weight: 400 !important;
+        color: white !important;
+    }
+}
+
+@media (max-width: 768px){
+    .logo {
+        font-size: 20px !important;
+        display: block !important;
+    }
+    .header-link {
+        margin-right: auto !important;
+
+        .nav-link{
+            margin: 0 !important;
+            font-size: 12px !important;
+            text-align: center;
+        }
+    }
+}
