@@ -4,6 +4,8 @@ import gymDetailReducer from "../reducers/gymDetailReducer";
 import thunk from 'redux-thunk';
 import pricingPlanReducer from "../reducers/pricingPlanReducer";
 import gymClassesReducer from "../reducers/gymClassesReducer";
+import membershipReducer from "../reducers/membershipReducer";
+import countryReducer from "../reducers/countryReducer";
 
 export const store = createStore(
     combineReducers({    
@@ -11,6 +13,8 @@ export const store = createStore(
         gymDetail: gymDetailReducer,
         pricing: pricingPlanReducer,
         classes: gymClassesReducer,
+        membership: membershipReducer,
+        countries: countryReducer,
     }), 
     applyMiddleware(thunk),
 );

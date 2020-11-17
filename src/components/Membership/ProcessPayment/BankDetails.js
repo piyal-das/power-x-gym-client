@@ -29,7 +29,7 @@ const BankDetails = ({ handlePayment }) => {
         } else {
             setPaymentSuccess(paymentMethod.id);
             setPaymentError(null);
-            // handlePayment(paymentMethod.id);
+            handlePayment(paymentMethod);
             history.push(`/membership/message`);
         }
     };

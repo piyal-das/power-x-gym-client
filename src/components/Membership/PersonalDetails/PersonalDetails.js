@@ -1,22 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import './PersonalDetails.scss';
 import { useForm } from "react-hook-form";
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { addUserDetail } from '../../../redux/actions/membershipActions';
+import { connect } from 'react-redux';
+import { fetchCountries } from '../../../redux/actions/fetchCountriesActions';
 
-const PersonalDetails = () => {
+const PersonalDetails = ({ userDetail, countries, addUserDetail, fetchCountries }) => {
     const {register, handleSubmit, watch, errors} = useForm();
-    const [countries, setCountries] = useState([]);
     const history = useHistory();
-    const {path} = useRouteMatch();
 
     useEffect(() => {
-        fetch('https://restcountries.eu/rest/v2/all')
-        .then(res => res.json())
-        .then(data => setCountries(data))
+        fetchCountries();
     }, []);
 
     const onSubmit = data => {
-        history.push(`/membership/bankDetails`);
+        addUserDetail(data);
+        console.log(userDetail, data);
+        // history.push(`/membership/bankDetails`);
     };
 
     return (
@@ -98,4 +99,18 @@ const PersonalDetails = () => {
     );
 };
 
-export default PersonalDetails;
+const mapStateToProps = (state) => {
+    return {
+        countries: state.countries.countries,
+        userDetail: state.membership.userDetail,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        addUserDetail: addUserDetail,
+        fetchCountries: () => dispatch(fetchCountries()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PersonalDetails);
