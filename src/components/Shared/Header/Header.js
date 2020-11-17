@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import './Header.scss';
 
 const Header = () => {
-
     return (
         <Navbar className="navbar" bg="none" variant="light">
             <div className="container">

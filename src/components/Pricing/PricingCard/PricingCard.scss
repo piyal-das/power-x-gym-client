@@ -4,6 +4,7 @@
 .pricingCard {
     position: relative;
     padding: 30px 0;
+    margin-bottom: 10px;
     z-index: 1;
 
     &:before{
@@ -43,6 +44,16 @@
 
         .main-btn {
             font-family: $pri-font;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .pricingCard{
+        .content{
+            ul{
+                margin-left: 150px !important;
+            }
         }
     }
 }

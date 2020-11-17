@@ -34,3 +34,18 @@
         z-index: -1;
     }
 }
+
+@media(max-width: 768px) {
+    .stepIndicator{
+        width: 400px;
+        
+        .circle{
+            width: 30px;
+            height: 30px;
+        }
+
+        .line{
+            width: 400px;
+        }
+    }
+}

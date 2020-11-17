@@ -26,12 +26,12 @@ const Banner = ({ gymDetails }) => {
                             : path === '/membership' ? <h1 className="main-heading">Your Gym Membership</h1>
                             : path === '*' ? <h1 className="main-heading">404 Not Found</h1>
                             : <>
-                                <div className="col-md-5">
+                                <div className="col-sm-12 col-md-5">
                                     <h1 className="banner-heading">The best fitness studio in town</h1>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, porro delectus. Aperiam, sapiente quod inventore laudantium delectus quaerat voluptates eaque eius fuga aut molestias dolorum magnam voluptatibus magni non unde.</p>
                                     <button className="main-btn" onClick={handleClick}>JOIN US</button>
                                 </div>
-                                <div className="col-md-7">
+                                <div className="col-sm-12 col-md-7">
                                     <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="L61p2uyiMSo" onClose={() => setOpen(false)} />
                                     <button className="banner-btn" onClick={() => setOpen(true)}>
                                         <FontAwesomeIcon icon={faPlayCircle} />

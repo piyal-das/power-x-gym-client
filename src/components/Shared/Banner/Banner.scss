@@ -69,3 +69,13 @@
     color: white;
     font-size: 90px;
 }
+
+@media (max-width: 768px) {
+    .banner{
+        text-align: center;
+    }
+
+    .banner-btn{
+        display: none;
+    }
+}

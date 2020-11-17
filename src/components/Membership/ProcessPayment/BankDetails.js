@@ -82,7 +82,7 @@ const BankDetails = ({ handlePayment }) => {
 
 
                 <div className="credit-card-body">
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex d-flex flex-sm-column flex-md-row justify-content-between">
                         <div className="credit-card-text">
                             <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod" value="paypal" disabled/>
                             <h3>PayPal</h3>
