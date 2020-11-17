@@ -3,10 +3,10 @@ import './PersonalDetails.scss';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
 import { addUserDetail } from '../../../redux/actions/membershipActions';
-import { connect } from 'react-redux';
 import { fetchCountries } from '../../../redux/actions/fetchCountriesActions';
+import { connect } from 'react-redux';
 
-const PersonalDetails = ({ countries, addUserDetail, fetchCountries }) => {
+const PersonalDetails = ({ countries, fetchCountries, addUserDetail, userDetail }) => {
     const {register, handleSubmit, watch, errors} = useForm();
     const history = useHistory();
 
@@ -15,8 +15,9 @@ const PersonalDetails = ({ countries, addUserDetail, fetchCountries }) => {
     }, []);
 
     const onSubmit = data => {
-        addUserDetail(data);
+        addUserDetail({...data});
         history.push(`/membership/bankDetails`);
+        console.log(data, userDetail);
     };
 
     return (
@@ -90,7 +91,7 @@ const PersonalDetails = ({ countries, addUserDetail, fetchCountries }) => {
                  </div>
                  <div className="form-group row text-right">
                      <div className="col-12">
-                        <input className="main-btn" type="submit" value="Next" />
+                        <input className="main-btn" type="submit" onClick={handleSubmit(onSubmit)} value="Next" />
                      </div>
                  </div>                
             </form>
@@ -106,8 +107,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        addUserDetail: addUserDetail,
         fetchCountries: () => dispatch(fetchCountries()),
+        addUserDetail: addUserDetail,
     }
 }
 

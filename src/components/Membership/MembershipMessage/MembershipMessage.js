@@ -1,19 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './MembershipMessage.scss';
 
 const MembershipMessage = ({ userDetail, bankDetail, gymDetail, pricingPlan }) => {
-    console.log(userDetail, bankDetail);
+    const info = { userDetail, bankDetail, gymDetail, pricingPlan };
+    console.log(info);
+    const [isInfoAdded, setIsInfoAdded] = useState(false);
+
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/addMember', { 
+    //         method: 'POST',
+    //         headers: {'Content-Type': 'application/json'},
+    //         body: JSON.stringify(info)
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data);
+    //         if(data > 0){
+    //             setIsInfoAdded(true);
+    //         } 
+    //     })
+    // }, [])
 
     return (
         <div className="text-center">
             <h1 className="heading">Welcome To <span style={{ color: '#171426' }}>power</span> <span className="special">X</span> gym</h1>
             { userDetail !== {} ? <h2 className="text-center">Hi, {userDetail.firstName} {userDetail.lastName}</h2> : '' }
             <h5 style={{ color: 'green' }} className="text-center">
-    Your Payment is Successful & subscription add for <span style={{ color: '#444' }}>{gymDetail.name} &amp; {pricingPlan.name} (${pricingPlan.price})</span>
+                Your Payment is Successful & subscription add for <br />
+                <span style={{ color: '#444' }}>{gymDetail.name} &amp; {pricingPlan.name} (${pricingPlan.price})</span>
             </h5>
+            { isInfoAdded ? <h5>Your information is safely stored in our database</h5> : '' }
             { bankDetail !== {} 
-                ? <h5 className="text-center">Keep your payment id <span className="special">{bankDetail.id}</span> for your future reference</h5> 
+                ? <h5 className="text-center">Keep your payment id <span style={{ color: '#666' }}>({bankDetail.id})</span> for your future reference</h5> 
                 : ''
             }
             <p>Doing Exercise everyday keep you mentally and physically strong</p>
