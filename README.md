@@ -1,5 +1,5 @@
 # Power X Gym | A Gymnasium App
-## ![homepage Image](https://imgbox.com/Yvtln2xa)
+## ![homepage Image](https://i.imgur.com/s5bFj2b.png)
 ## [Live Link](https://power-x-gym-spr.web.app/)
 
 Power X Gym is an application for Gymnasium which offers users to choose their gym training according to their benefit, class schedule, pricing plan. When choice is fixed then user avail their membership by providing their information and payment details.
